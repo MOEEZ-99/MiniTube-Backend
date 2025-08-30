@@ -21,15 +21,10 @@ app.use((req, res, next) => {
 
 
 app.use(cors({
-  origin: true,
+  origin: "http://localhost:5173/",
   credentials: true,
    methods: ["GET","POST","DELETE","PUT","OPTIONS"],
    allowedHeaders: ["Content-Type", "Authorization"] 
-}));
-
-app.options("*", cors({
-  origin: true,
-  credentials: true
 }));
 
 
