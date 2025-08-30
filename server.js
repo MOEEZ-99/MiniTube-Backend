@@ -28,14 +28,6 @@ app.use(cors({
 }));
 
 
-app.options("*", cors({
-  origin: [
-    "http://localhost:5173",
-    "https://your-frontend.vercel.app"
-  ],
-  credentials: true
-}));
-
 
 app.use(cookieParser());
 app.use(express.json());
