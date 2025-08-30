@@ -207,7 +207,8 @@ export const logout = async (req,res) => {
     
         const options = {
             httpOnly: true,
-            secure: true
+            secure: true,
+            sameSite:"true"
         }
     
         const {accessToken, newRefreshToken} = await generateAccessAndRefereshTokens(user._id)
