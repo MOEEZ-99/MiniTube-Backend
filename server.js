@@ -27,6 +27,10 @@ app.use(cors({
    allowedHeaders: ["Content-Type", "Authorization"] 
 }));
 
+app.get('/test', (req, res) => {
+  res.status(200).send('CORS is working');
+});
+
 
 
 app.use(cookieParser());
