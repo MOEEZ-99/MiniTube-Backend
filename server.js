@@ -18,34 +18,10 @@ app.use((req, res, next) => {
   next();
 });
 
-// Allowed origins
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://mini-tube-123.netlify.app"
-];
-
-// Apply CORS first
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
-
-// Force preflight handling
-app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", req.headers.origin);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-  return res.sendStatus(200);
-});
+  orgin:"https://mini-tube-123.netlify.app",
+  credentials:true
+})
 
 app.get('/test', (req, res) => {
   res.status(200).send('CORS is working');
