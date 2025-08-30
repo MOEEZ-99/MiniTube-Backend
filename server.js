@@ -13,11 +13,23 @@ import playlistRoutes from "./routes/playlist.routes.js";
 
 const app = express();
 
+
+app.use((req, res, next) => {
+  console.log("Request:", req.method, req.path, "Origin:", req.headers.origin);
+  next();
+});
+
+
 app.use(cors({
   origin: true,
   credentials: true,
    methods: ["GET","POST","DELETE","PUT","OPTIONS"],
    allowedHeaders: ["Content-Type", "Authorization"] 
+}));
+
+app.options("*", cors({
+  origin: true,
+  credentials: true
 }));
 
 
