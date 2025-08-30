@@ -14,7 +14,7 @@ import playlistRoutes from "./routes/playlist.routes.js";
 const app = express();
 
 app.use(cors({
-  origin: true,
+  origin: "https://mini-tube-123.netlify.app"
   credentials: true,
    methods: ["GET","POST","DELETE","PUT","OPTIONS"],
    allowedHeaders: ["Content-Type", "Authorization"] 
