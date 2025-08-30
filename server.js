@@ -13,6 +13,12 @@ import playlistRoutes from "./routes/playlist.routes.js";
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log("➡️ Request:", req.method, req.path, "Origin:", req.headers.origin);
+  next();
+});
+
+
 app.use(cors({
   origin: "https://mini-tube-123.netlify.app",
   credentials: true,
