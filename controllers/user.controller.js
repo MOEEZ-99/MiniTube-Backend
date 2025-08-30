@@ -171,7 +171,8 @@ export const logout = async (req,res) => {
 
       const options = {
         httpOnly: true,
-        secure: true
+        secure: true,
+       sameSite:"none"
     }
 
     res.clearCookie("accessToken",options)
@@ -208,7 +209,7 @@ export const logout = async (req,res) => {
         const options = {
             httpOnly: true,
             secure: true,
-            sameSite:"true"
+            sameSite:"none"
         }
     
         const {accessToken, newRefreshToken} = await generateAccessAndRefereshTokens(user._id)
