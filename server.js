@@ -13,13 +13,6 @@ import playlistRoutes from "./routes/playlist.routes.js";
 
 const app = express();
 
-
-app.use((req, res, next) => {
-  console.log("Request:", req.method, req.path, "Origin:", req.headers.origin);
-  next();
-});
-
-
 app.use(cors({
   origin: true,
   credentials: true,
@@ -29,6 +22,11 @@ app.use(cors({
 
 app.get('/test', (req, res) => {
   res.status(200).send('CORS is working');
+});
+
+app.use((req, res, next) => {
+  console.log("Request:", req.method, req.path, "Origin:", req.headers.origin);
+  next();
 });
 
 
