@@ -19,9 +19,9 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  orgin:"https://mini-tube-123.netlify.app",
-  credentials:true
-})
+  origin: "https://mini-tube-123.netlify.app",
+  credentials: true
+}));
 
 app.get('/test', (req, res) => {
   res.status(200).send('CORS is working');
