@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: "https://mini-tube-123.netlify.app",
+  origin:["http://localhost:5173", "https://mini-tube-123.netlify.app"],
   credentials: true
 }));
 
