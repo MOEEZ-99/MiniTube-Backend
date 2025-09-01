@@ -1,5 +1,8 @@
 # MiniTube Backend (Node.js + Express.js)
 
+[Live View](https://mini-tube-123.netlify.app/)
+
+
 A **mini version of YouTube** built with REST APIs, providing core video-sharing features like uploading, liking, commenting, and subscribing.  
 
 This project uses **JWT authentication** with **HTTP-only cookies** for secure and persistent sessions.
